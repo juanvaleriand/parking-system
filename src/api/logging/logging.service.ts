@@ -73,7 +73,7 @@ export class LoggingService {
         if (timeAgo.days > 0) {
             totalBiaya = (timeAgo.days * chargeDay) + (timeAgo.hour * biaya);
         } else if (timeAgo.hour >= 1 && timeAgo.minutes > 60 && timeAgo.seconds > 3600) {
-            totalBiaya = biaya * timeAgo.hour;
+            totalBiaya = timeAgo.hour == 1 ? biaya * timeAgo.hour * 2 : biaya * timeAgo.hour;
         } else {
             totalBiaya = biaya;
         }
